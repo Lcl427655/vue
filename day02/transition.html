@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .show{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        /*transition标签没有name属性时默认为v-xxx*/
+        /*动画的4个状态，文档有说明*/
+        .v-enter{
+            opacity: 0;
+        }
+        .v-enter-active{
+            opacity: 1;
+            transition: 2s linear;
+        }
+        .v-leave-active{
+            opacity: 0;
+            transition: 2s linear;
+        }
+        .test-enter{
+            opacity: 0.3;
+        }
+        .test-enter-active{
+            opacity: 0.7;
+            transition: 8s linear;
+        }
+        .test-leave-active{
+            opacity: 0.3;
+            transition: 8s linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!--动画-->
+        <!--v-if : 操作的是dom。当数据一开始就确定下来使用该属性，因为不停的渲染页面会浪费性能-->
+        <!--v-show : 操作的是样式，如果频繁的切换dom,使用该属性-->
+        <div v-show="flag">
+            <h1>show</h1>
+        </div>
+        <div v-show="!flag">
+            <h1>!show</h1>
+        </div>
+        <!--if不通过的话，里边的内容都不会执行，所以数据已经存在，比如内部使用了v-for,使用if性能就会高-->
+        <div v-if="flag">
+            <h1>if</h1>
+        </div>
+        <div v-if="!flag">
+            <h1>!if</h1>
+        </div>
+        <button @click="flag = !flag">切换</button>
+        <!--动画的组件-->
+        <transition>
+            <div v-show="flag">
+                <!--只有dom从显示到隐藏或者从隐藏到显示，才能使用vue动画-->
+                <div class="show"></div>
+            </div>
+        </transition>
+        <transition name="test">
+            <div v-show="flag">
+                <!--只有dom从显示到隐藏或者从隐藏到显示，才能使用vue动画-->
+                <div class="show"></div>
+            </div>
+        </transition>
+        <!--npm install animate.css-->
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <!-- 不依赖框架，react也可以使用，基于promise的 -->
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                flag:true,
+            }
+        });
+    </script>
+    <!-- fetch代填ajax -->
+    <!-- async await -->
+</body>
+</html>

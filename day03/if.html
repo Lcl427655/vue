@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .x{
+            border-left: solid 10px ;
+            border-right: solid 10px ;
+        }
+        .y{
+            border-top: solid 10px ;
+        }
+        .z{
+            border-bottom: solid 10px ;
+        }
+        .aa{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <!--v-if:操作的是dom,可以与v-else-if,v-else连写-->
+        <!--v-show:操作的是样式-->
+        <div v-if="flag">false</div>
+        <!--需要连写，中间不能有其他的-->
+        <div v-else>true</div>
+        <hr>
+        <!--template:Vue提供，没有任何实际的意义,用来包裹元素-->
+        <!--v-if,v-else是紧接着写，否则找不到，用template代替了div,v-show不支持特，template-->
+        <template v-if="!flag">
+            <div>false</div>
+            <div>false</div>
+            <div>false</div>
+            <div>false</div>
+        </template>
+        <div v-else>true</div>
+        <hr>
+        <button @click="cut=!cut">切换</button>
+        <template v-if="cut">
+            <label>注册</label>
+            <!--默认情况下，会认为两个input是一个会复用，如果加上不同的key,则vue认为是不同的元素-->
+            <!--key="1",1是字符串，:key="1",1是数字，是个变量-->
+            <input type="text" key="1">
+        </template>
+        <template v-else>
+            <label>登陆</label>
+            <input type="text" key="2">
+        </template>
+        <hr>
+        <!--v-bind:简写:,动态的绑定属性-->
+        <!--class和style的绑定方式比较特殊，第一种对象方式，第二种数组方式，其他不需要记忆-->
+        <!--:class和class的绑定不会冲突-->
+        <img style="background-color: red;" v-bind:width="w" :height="100" class="y z" :class="cut?'x':''"></img>
+        <!--对象方式   {className1:isActive1,className2:isActive2,...}   {x:cut}   x是true即加载到当前样式中-->
+        <img style="background-color: red;" v-bind:width="w" :height="100" class="y" :class="{x:cut,z:!cut}"></img>
+        <!--数组方式 [className1,className1,...]-->
+        <img style="background-color: red;" v-bind:width="w" :height="100" class="y" :class="[class1,class2]"></img>
+        <!--隔行变色-->
+        <div v-for="(a,index) in 10" :class="{aa:index%2}">{{a}}</div>
+        <!--style对象方式-->
+        <div style="font-size: 30px" :style="{backgroundColor:'red'}">对象</div>
+        <!--style数组方式-->
+        <div style="font-size: 30px" :style="[style1,{border:'solid 2px blue'}]">数组</div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app1",
+            data:{
+                cut:true,
+                flag:false,
+                w:200,
+                class1:'x',
+                class2:'z',
+                style1:{backgroundColor:'red'}
+            }
+        });
+        //实现单页开发的方式
+        //通过hash记录跳转的路径，路径后带上 #***  (实现历史管理)
+        //通过浏览器自带的history,(H5中有个history.pushState(),需要服务端的支持，否则可能404
+        //开发使用hash方式，上线只用history方式
+    </script>
+</body>
+</html>

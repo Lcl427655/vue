@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+    <div id="app">
+        <input type="text" id="inp">
+    </div>
+    <script>
+        // Object.defineProperty ES5
+        let obj = {};
+        Object.defineProperty(obj,"name",{
+            value:"xxx",
+            configurable:false,//是否可删除属性
+            writable:true,//是否可重新赋值
+            enumerable:true//是否可以枚举属性 for keys in obj
+        });
+        //configurable:false则不可删除属性 
+        //delete obj.name;
+
+        let obj1 = {};
+        Object.defineProperty(obj1,"name",{
+            get(){
+                return 1;
+            },
+            set(val){
+                console.log(val);
+            }
+        });
+
+        let obj2 = {};
+        let temp = {};
+        Object.defineProperty(obj2,"name",{
+            get(){
+                return temp["name"];
+            },
+            set(val){
+                temp["name"] = val;
+                inp.value = obj2.name;
+            }
+        });
+        //页面一加载会调用get方法，赋值的为temp的name属性的值为undefined
+        inp.value = obj2.name || "";
+        //input值改变触发set赋值
+        inp.addEventListener("input",function(){
+            obj2.name = this.value;
+        });
+
+    </script>
+</body>
+</html>

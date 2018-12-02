@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app1">
+            全选：<input type="checkbox" v-model="checkAll"><br>
+        <input type="checkbox" v-for="(product,index) in products" v-model="product.isSelected"><br>
+
+        <!--现在给输入框赋值，msg同样赋值-->
+        <!--一种理解根据输入框的值，计算出msg的值，另一种理解是给输入框赋值，同时影响了msg的值(错误)-->
+        <input type="text" v-model="test">{{msg}}<br>
+        <input type="text" v-model="test1">{{msg1}}{{msg2}}<br>
+        <input type="text" v-model="test11">{{msg11}}<br>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app1",
+            data:{
+                products:[{isSelected:true},{isSelected:false}],
+                //computed只需要声明不被计算的那个，被计算的那个get获得
+                test:'',
+                //watch,两个变量都要声明
+                msg1:"",
+                msg2:"",
+                test1:'',
+                first:"first",
+                last:"last",
+                test11:'',
+                msg11:''
+            },
+            computed:{//computed不支持异步方式，因为需要return
+                //根据下边的复选框计算出整体的复选框
+                checkAll:{
+                    get(){
+                        //都是true返回true
+                        return this.products.every(item => item.isSelected);
+                    },
+                    set(val){
+                        this.products.map(item => item.isSelected = val);
+                    }
+                },
+                /*
+                test:{
+                    get(){//get方法必须存在
+                        return this.msg;
+                    },
+                    set(val){//如果把val赋值给另一个变量，之后test就不会重新被赋值，可以再get方法返回this.msg,但是并没有必要
+                        //所以该理解有问题
+                        this.msg = val;
+                    }
+                }*/
+                //所以正常的写法是,而不是上边的
+                msg(){
+                    return this.test;
+                }
+            },
+            //computed是根据输入框的变化计算出msg的值，使用的msg的get,return的是this.msg的操作
+            watch:{//watch是观察test1的变化
+                test1(newVal,oldVal){//值变化才触发，支持异步操作,computed使用较多
+                    this.msg1 = "..........";
+                    setTimeout(() => {
+                        this.msg1 = newVal;
+                        this.msg2 = "," + this.first + "-" + newVal + "-" + this.last;
+                    }, 2000);
+                }
+            }
+        });
+        vm.$watch('test11',(newVal,oldVal) => {
+            vm.msg11 = "..........";
+            setTimeout(() => {
+                vm.msg11 = newVal;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

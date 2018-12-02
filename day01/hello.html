@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- moustache   小胡子语法    表达式    赋值    取值    三元 -->
+        {{msg}}<br>
+        <!-- vue的指令，只是dom的行间元素（自定义属性）,vue给这类属性
+        赋予特殊的意义，所有指令都以v-开头，value属性默认会被vue忽略掉
+        selected,checked都没有意义 -->
+        <input type="text" value="msg" v-model="msg"><br>
+        <input type="text" v-model="msg"><br>
+        <!-- v-text等价于{{}} 防止{{}}在页面上出现-->
+        <!-- <div v-text="msg"><br> -->
+        <!-- v-once 只绑定一次，当数据变化，页面不会再次刷新-->
+        <div v-once>
+            {{msg}}{{msg}}11
+        </div>
+        <!-- v-once 和 v-text冲突？ -->
+        <!-- v-html 当值当做html处理，一定是可信任的html -->
+        <div v-html="p">
+            {{p}}
+        </div>
+
+        <div>
+            <!-- vue在循环data中的数据时，会给每个属性增加set和get方法(数据劫持) -->
+            <!-- 所以使用school时，先在test中初始化，赋值为空，然后再使用，否则赋值之后页面不会有任何变化 -->
+            {{test.school}}{{test.name}}
+        </div>
+        <div>
+            {{arr}}
+            {{arr[1]}}
+        </div>
+        <!-- v-for 解决循环问题，更高效，会复用原有的结构 -->
+        <div>
+            <!-- 循环哪个就需要在哪个上边加v-for -->
+            <!-- for或者in(最好用in),加索引和不加索引 -->
+            <ul>
+                <li v-for="fruit of fruits">{{fruit.name}}</li>
+            </ul>
+            <ul>
+                <li v-for="fruit in fruits">{{fruit.name}}</li>
+            </ul>
+            <ul>
+                <li v-for="(fruit,index) in fruits">{{fruit.name}}{{index+1}}</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li v-for="(fruit,index) in fruits">
+                    {{index+1}}.{{fruit.name}}
+                    <ul style="list-style: none">
+                        <li v-for="(col,ic) in fruit.color">{{index+1}}.{{ic+1}}.{{col}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <!-- 循环字符串，数字没有什么意义 -->
+                <li v-for="a in 'aaaa'">{{a}}</li>
+                <li v-for="a in 5">{{a}}</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li v-for="(value,key,index) in obj">{{index+1}}-{{key}}:{{value}}</li>
+            </ul>
+        </div>
+        <div>
+            <!-- 很少使用onclick,因为所有的方法都是绑定在window对象上的
+                (function(){
+                    function fn(){
+                        console.log('***')
+                    }
+                })();-->
+            <input type="button" value="点击" id="btn" onclick="fn()"><br/>
+            <!-- v-on:事件 事件函数可以定义在data中，也可以定义在methods中，但是不能重复定义-->
+            <input type="button" value="点击" id="btn1" v-on:click="fn"><br>
+            <!-- v-on等价于@ -->
+            <input type="button" value="点击" id="btn2" @click="fn2"><br>
+            <!-- 不传参数不要写()，会自动传入事件源 -->
+            <input type="button" value="点击" id="btn22" @click="fn3"><br>
+            <!-- 手动传参 $vue自带的 -->
+            <input type="button" value="点击" id="btn3" @click="fn4($event,1)"><br>
+        </div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //vue模式：MVVM
+        //双向绑定
+        //viewMpdel
+        let vm = new Vue({//vm根实例，可以new多个，但是没必要
+            el:"#app",//选择挂载点，querySelector(不能为html,body)，即app中的数据会被vm代理
+            data:{//data中的数据会被vm所代理
+                msg:"test",//vm.msg可以取值
+                p:"<h2>h2</h2>",
+                test:{school:""},
+                arr:[1,2,3,4,5],
+                fruits:[
+                    {name:"香蕉",color:["yellow","green"]}
+                    ,{name:"苹果",color:["yellow","green","red"]}
+                    ,{name:"西瓜",color:["green"]}],
+                obj:{a:"aaaa",b:"bbbb",c:"cccc"},
+                fn(){
+                    alert(1111);
+                }
+            },
+            methods: {
+                //ES6语法。可以省略:function()
+                fn2(){
+                    alert(this);
+                    alert(this.msg);//获取data中的数据
+                },//this永远指向vm,所以不能乱使用=>，this会指向上级window
+                //或者
+                // fn2:function(){
+                //     alert(2222222);
+                // }
+
+                //特殊情况,如果v-on中加了(),event会为undefined
+                fn3(event){
+                    console.log(event);
+                },
+                fn4(event,i){
+                    console.log(event);
+                    console.log(i);
+                }
+            }
+            //data和methods数据会全部放入到vm中，名字不能重复
+        });
+        //给对象添加响应式的数据变化
+        //参数:要添加的对象   "属性"   值
+        vm.$set(vm.test,"name","name");
+        //替换原对象
+        vm.test={school:"111111111","name":2222222222};
+        //改变索引或者长度不会改变值，因为不会set和get值（新版的可以改变了？？？？）
+        vm.arr[1] = 100;
+        vm.arr.length -= 2;
+        //pop push unshift shift reserve sort等方法改变原数组的也可以改变数组的值
+        vm.arr.push(123);
+        vm.arr = vm.arr.map(item => item*3);
+
+        function fn(){
+            alert(this);
+        }
+        console.log(btn.onclick);
+        //打印结果，所以点击的时候相当于执行了onclick(event)这个函数，函数里执行了fn(),所以fn需要加()
+        // ƒ onclick(event) {
+        //     fn()
+        // }
+    </script>
+</body>
+</html>

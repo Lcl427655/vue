@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--.capture事件捕获，点击grandson，会先弹出parent，然后grandson和child，之后不会再弹出了-->
+        <!--<div @click.capture="parent">parent 这样子再点击grandson，只会弹出parent，.stop阻止事件传播，即捕获到grandson-->
+        <div @click.capture="parent">parent
+            <!--.stop阻止事件传播，点击grandson时候，只会弹出grandson和child-->
+            <div @click.stop="child">child
+                <div @click="grandson">grandson</div>
+            </div>
+        </div>
+        <hr>
+        <div @click="parent">parent
+            <!--.once只会执行一次，点击grandson第一次会弹出grandson，child，parent，点击grandson第二次会弹出grandson，parent-->
+            <!--原生的js中类似于on,off-->
+            <div @click.once="child">child
+                <div @click="grandson">grandson</div>
+            </div>
+        </div>
+        <hr>
+        <div @click="parent">parent
+            <!--.self,只有点自己的时候才触发事件，点击grandson弹出grandson，parent,点击child弹出child，parent-->
+            <div @click.self="child">child
+                <div @click="grandson">grandson</div>
+            </div>
+        </div>
+        <hr>
+            <!--.prevent阻止事件的默认行为，preventDefault,returnValue=false-->
+        <a href="http://www.baidu.com" @click.prevent="grandson">grandson</a>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            methods: {
+                parent:function () {
+                    alert("parent");
+                },
+                child(){
+                    alert("child");
+                },
+                //正常点击grandson会弹出三个提示，时间冒泡
+                grandson(e){
+                    alert("grandson");
+                    //js的阻止事件冒泡
+                    //e.cancelBubble = true;
+                    //e.stopPropagation();
+                }
+            },
+            data: {
+
+            }
+        });
+    </script>
+</body>
+</html>

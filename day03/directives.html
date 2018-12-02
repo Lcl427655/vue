@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!--v-color自定义指令-->
+        <button v-color="flag">变色</button>
+        <div class="a" v-draw></div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            directives:{//自定义指令
+                //v-可以省略
+                color(el,binding){
+                    //console.log(arguments)
+                    //el值的值当前的dom元素
+                    //binding:属性中有name,value,modifires(修饰符)等
+                    el.style.background = binding.value;
+                },
+                draw(el){
+                    el.onmousedown = function (ev) {
+                        var oevent = ev || event;
+
+                        var distanceX = oevent.clientX - el.offsetLeft;
+                        var distanceY = oevent.clientY - el.offsetTop;
+
+                        document.onmousemove = function(ev){
+                            var oevent = ev || event;
+                            el.style.left = oevent.clientX - distanceX + 'px';
+                            el.style.top = oevent.clientY - distanceY + 'px';
+                        };
+                        document.onmouseup = function(){
+                            document.onmousemove = null;
+                            document.onmouseup = null;
+                        };
+                    }
+                }
+            },
+            data: {
+                flag:'red'
+            }
+        });
+    </script>
+</body>
+</html>

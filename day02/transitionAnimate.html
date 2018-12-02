@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/animate.css/animate.css"></link>
+    <style>
+        .show{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="flag = !flag">切换</button>
+        <!--动画的组件-->
+        <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+            <div v-show="flag">
+                <!--只有dom从显示到隐藏或者从隐藏到显示，才能使用vue动画-->
+                <div class="show"></div>
+            </div>
+        </transition>
+        <input type="text" v-model="query">
+        <transition-group enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+            <!--循环需要transition-group标签，div上需要有key，不能重复，所以用:key或者v-bind:key绑定-->
+            <!--v-for会默认复用原有的元素-->
+            <div v-for="(a,index) in arr1" :key="Math.random()">{{a}}</div>
+        </transition-group>
+        <!--npm install animate.css-->
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <!-- 不依赖框架，react也可以使用，基于promise的 -->
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                flag:true,
+                arr:[1,2,3,4,5,11],
+                query:""
+            },
+            computed:{
+                arr1(){
+                    return this.arr.filter(item => item == this.query);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- vue的ui框架 iview, mintui,elementui -->
+    <style>
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle!important;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <table class="table">
+                    <caption class="h2 text-primary">模拟购物车</caption>
+                    <!-- <tr><td></td></tr> -->
+                </table>
+                <table class="table table-hover">
+                    <!-- 位置处于tr的最下边？？？兼容问题么 -->
+                    <!-- <caption class="h2">模拟购物车</caption> -->
+                    <thead>
+                        <tr>
+                            <th>
+                                <!--computed不需要change-->
+                                <input type="checkbox"  v-model="checkAll">全选
+                            </th>
+                            <th>商品名称</th>
+                            <th>商品图片</th>
+                            <th>商品描述</th>
+                            <th>商品价格</th>
+                            <th>商品数量</th>
+                            <th>小计</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(product,index) in products">
+                            <!-- 注意json中的字符串的区别"false"和false -->
+                            <td><input type="checkbox" v-model="product.isSelected">{{index+1}}</td>
+                            <td>{{product.name}}</td>
+                            <!-- v-bind:或者: 动态绑定数据 -->
+                            <td><img :src="product.url" alt="" v-bind:title="product.info"></td>
+                            <td>{{product.info}}</td>
+                            <td>{{product.price}}</td>
+                            <!-- .number让输入值变为数字类型 .lazy失去焦点的时候更新 -->
+                            <td><input type="number" v-model.number="product.count" min="0"/></td>
+                            <!--特定的显示，例如只显示两位小数，使用过滤器  |管道符-->
+                            <!--此处可以传或者不传参数-->
+                            <td>{{product.price*product.count | fixed(2)}}</td>
+                            <!--删除可以传入索引或者对象(实际为地址值)-->
+                            <!--{} === {} {} == {} 都是false-->
+                            <td><button class="btn btn-danger" @click="remove(product);">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                            <!--页面数据只要变化就会调用此函数，所以该函数可能会执行很多次，
+                            不会缓存上一次的结果，导致性能的浪费，页面很少用，以computed代替-->
+                            <td>总价{{sum | fixed(2)}}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <!-- 不依赖框架，react也可以使用，基于promise的 -->
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            //computed:当给全选赋值时，要影响其他行的变化，当页面刷新时，获取全选指，是根据其他行的checkbox计算全选值
+            //专门用来发送ajax的
+            created(){
+                //在data,methods数据初始化之后执行的，this指向vm实例
+                //钩子函数
+                this.initData();
+            },
+            //过滤器，可以定义多个
+            filters:{
+                //默认第一个参数指向管道符前边的输入值，后边的指向传入的参数
+                fixed(input,param){//这里的this指向的window,不是vm
+                    return "￥" + input.toFixed(param);
+                }
+            },
+            methods: {
+                initData(){
+                    //console.log(this.products);
+                    //window.axios也可以
+                    axios.get("./products.json").then( res => {//成功回调函数(回调函数中的this指向window)
+                        //箭头函数的this，会找到上一级的created()的this即vm实例的
+                        this.products = res.data;
+                        //求和
+                        this.sum();
+                    },err => {//失败回调函数
+                        console.log(err);
+                    });
+                },
+                remove(product){
+                    //splice:性能低
+                    this.products = this.products.filter(p => p !== product);
+                }
+            },
+            data:{
+                msg:"msg",
+                products:[]
+                //checkAll应该放于computed中
+                //checkAll:false
+            },
+            computed:{//也会将属性放于vm上不能重名
+                checkAll:{//类似于Object.definedProperties
+                    set(val){//this指向实例    对应的input上的v-model值改变的时候
+                        this.products.forEach(item => item.isSelected = val);
+                    },
+                    get(){//v-model读取的时候
+                        //当products的值改变的时候会重新计算
+                        return this.products.every(item => item.isSelected);
+                    }
+                },
+                /*sum:{//sum会被缓存，如果依赖的数据没有变化，就不会重新执行
+                    get(){
+                        return this.products.reduce((i,j) => {
+                            if(!j.isSelected) {//下一行没有选中，不累加该行
+                                return i;
+                            }
+                            return i + j.price * j.count
+                        },0);
+                    }
+                }*/
+                sum(){//简写默认为get
+                    return this.products.reduce((i,j) => {
+                        if(!j.isSelected) {//下一行没有选中，不累加该行
+                            return i;
+                        }
+                        return i + j.price * j.count
+                    },0);
+                }
+            }
+        });
+    </script>
+    <!-- fetch代填ajax -->
+    <!-- async await -->
+</body>
+</html>
