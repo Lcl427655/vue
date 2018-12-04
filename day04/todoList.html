@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .del {
+            text-decoration: line-through;
+            color: #cccccc !important;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--导航组件-->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    todoList
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!--面板组件-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="text-danger">还有{{sum}}件事要完成</h3>
+                        <!--keydown和keyup差一个单词-->
+                        <input type="text" class="form-control" @keyup.13="addTodoList" v-model="title">
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" v-for="(todo,index) in todoListFilter"
+                                @dblclick="changeTitle(todo)">
+                                <input type="checkbox" v-model="todo.isSelected">
+                                <span :class="{del:todo.isSelected}" v-show="curTodo != todo">
+                                        {{todo.title}}
+                                    </span>
+                                <input type="text" v-model="todo.title" v-show="curTodo == todo"
+                                    @keyup.13="cancleTitle" @blur="cancleTitle" v-focus>
+                                <!--pull-right btn btn-danger btn-xs 浮动导致按钮位置改变，使用极小按钮-->
+                                <button class="pull-right btn btn-danger btn-xs" @click="removeTodoList(todo)">&times;
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-footer">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" :class="{active:hash === 'all'}"><a href="#/all">全部任务</a></li>
+                            <li role="presentation" :class="{active:hash === 'do'}"><a href="#/do">已完成</a></li>
+                            <li role="presentation" :class="{active:hash === 'undo'}"><a href="#/undo">未完成</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script src="todo.js"></script>
+</body>
+</html>
