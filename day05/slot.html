@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <!--不传值使用slot的默认值-->
+    <modal></modal>
+    <hr>
+    <modal>传入值1</modal>
+    <hr>
+    <modal>
+        <!--不起名字的标签都会传入default-->
+        <!--这里的内容事件都是属于父级的，不是属于组件的-->
+        <!--只有组件的属性名是属于组件的-->
+        <h5 @click="fn">传入默认值</h5>
+        <h1 slot="content">传入内容</h1>
+        <h3 slot="title">传入标题</h3>
+        <h5>传入默认值</h5>
+    </modal>
+    <hr>
+    <button @click="reverse">切换</button>
+    <loading ref="load"></loading>
+</div>
+<template id="tem">
+    <div>
+        <slot name="title">默认标题</slot>
+        <slot name="content">默认内容</slot>
+        <slot name="default">这是一个默认值</slot>
+    </div>
+</template>
+<!--npm install vue-router-->
+<!--yarn add命令-->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let modal = {
+        //slot:片段
+        //name="default"可以省略
+        template: '#tem'
+    };
+    //父组件调用子组件
+    let loading = {
+        data(){
+            return {
+                flag:true
+            }
+        },
+        template:`<div v-show="flag">加载中。。。</div>`,
+        methods: {
+            hide(){
+                this.flag = !this.flag;
+            }
+        }
+    };
+    let vm = new Vue({
+        el: "#app",
+        data: {},
+        components: {
+            modal,
+            loading
+        },
+        methods:{
+            fn(){
+                alert(111);
+            },
+            reverse(){
+                this.$refs.load.hide();
+            }
+        },
+        mounted(){
+            //挂在完成获取ref,ref放在组件中获取的是组件的实例，并不是dom元素
+            console.log(this.$refs.load);
+            this.$refs.load.$el.style.background = 'red';
+        }
+    });
+</script>
+<script src="node_modules/axios/dist/axios.js"></script>
+</body>
+</html>

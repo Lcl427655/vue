@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+    1)安装node.js
+    2)安装镜像npm install -g cnpm --registry=https://registry.npm.taobao.org
+    3）npm init -y
+    4)npm i webpack --save-dev
+    5)npm i webpack-cli --save-dev
+    默认的入口./src/index.js,无需配置webpack.config.js
+    只需要在index中引入其他的模块即可
+    在package.json的scripts中配置开发和生产的脚本，执行对应的命令即可
+    可以打包多个文件(百度了解下即可，3可以在webpack.config.js的entry中配置，4的百度)
+    6)npm i webpack-dev-server --save-dev
+    内置了服务，可以启动一个端口号，当代码更新时，可以自动打包(内存中打包，不产生dist目录)
+    代码有变化就重新执行
+    -->
+
+    <!--babel 将ES6语法转ES5语法、
+    npm install babel-core --save-dev
+    npm install babel-loader --save-dev
+    让babel-loader拥有解析ES6(ES2015)语法的功能,升级版本不需要？？？，也是var
+    npm install babel-preset-es2015 --save-dev
+    0,1,2,3,4(ES6),其中0包含1至4
+    //可以解析es7语法
+    npm install babel-preset-stage-0 --save-dev
+    .babelrc和webpack.config.js增加配置
+    -->
+
+    <!--
+    css-loader:将css解析成模块，将解析的内容插入style标签内（style-loader）
+    npm i css-loader style-loader --save-dev
+    less/sass/stylus(预处理语言)
+    npm i less-loader less css-loader style-loader --save-dev
+    //百度
+    npm i sass-loader --save-dev
+    npm i stylus-loader --save-dev
+    -->
+
+    <!--
+    file-loader/url-loader（依赖于file_loader）
+    npm i file-loader url-loader --save-dev
+    -->
+
+    <!--
+    html插件
+    插件的作用是将src下的自己的html当作模板，产出到dis目录下
+    npm i html-webpack-plugin --save-dev
+    -->
+
+    <!--webpack3中：
+    1)npm init -y
+    2)npm install webpack &#45;&#45;save-dev(或者yarn install webpack &#45;&#45;dev)
+    3)npm run build
+    在package.json中配置脚本"build": "webpack"，在控制台运行npm run build,
+    就会找当前目录下的node_modules下的.bin下的webpack.cmd
+    执行的是bin/webpack.js,webpack.js需要当前目录下有个webpack.config.js-->
+
+    <!--快速构建Vue项目
+    npm install vue-cli -g
+    vue init webpack <项目名称>
+    npm install
+    npm run dev
+    https://www.jianshu.com/p/1626b8643676-->
+</body>
+</html>

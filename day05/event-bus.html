@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <tem1></tem1>
+    <tem2></tem2>
+</div>
+<!--npm install vue-router-->
+<!--yarn add命令-->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script>
+    //该用处就是创建一个第三方事件，将不同的组件的发布订阅统一到一个公共模块上
+    let EventBus = new Vue;
+    let tem1 = {
+        template:`<div><div>{{color}}</div><button @click="change">变绿</button></div>`,
+        data(){
+            return {
+                color:'绿色',
+                old:'绿色'
+            }
+        },
+        //页面一加载，订阅变红事件
+        created(){
+            //这里的回调函数不能使用function,因为回调function中的this指向window
+            EventBus.$on('change-red',(val) => {
+                //this指向tem1
+                this.color = val;
+            })
+        },
+        methods:{
+            change(){
+                EventBus.$emit('change-green',this.old);
+            }
+        }
+    };
+    let tem2 = {
+        template:'<div><div>{{color}}</div><button @click="change">变红</button></div>',
+        data(){
+            return {
+                color:'红色',
+                old:'红色'
+            }
+        },
+        created(){
+            //这里的回调函数不能使用function,因为回调function中的this指向window
+            EventBus.$on('change-green',(val) => {
+                //this指向tem1
+                this.color = val;
+            })
+        },
+        methods:{
+            change(){
+                EventBus.$emit('change-red',this.old);
+            }
+        }
+    };
+    let vm = new Vue({
+        el: "#app",
+        data: {},
+        components: {
+            tem1,tem2
+        }
+    });
+</script>
+</body>
+</html>

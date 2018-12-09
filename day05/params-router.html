@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <router-link :to="{path:'/article/1'}" tag="button">文章1</router-link>
+    <router-link :to="{path:'/article/2'}" tag="button">文章2</router-link>
+    <router-link :to="{path:'/article/3'}" tag="button">文章3</router-link>
+    <router-view></router-view>
+</div>
+<!--npm install vue-router-->
+<!--yarn add命令-->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script src="./node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let article = {
+        template: `<div>第{{$route.params.c}}篇文章</div>`,
+    };
+    let routes = [
+        {
+            //路径参数 表示值必须要有，但是随机的
+            //:代表随机
+            // /article/1/a
+            // /article/:c/:a ==> {c:1,a:'a'} ==> this.$route.params
+            path: '/article/:c', component: article
+        }
+    ];
+    let router = new VueRouter({
+        routes,
+        linkActiveClass: 'active'
+    });
+    let vm = new Vue({
+        el: "#app",
+        router,
+        data: {}
+    });
+</script>
+</body>
+</html>

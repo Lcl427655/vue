@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <!--ref=""固定写法-->
+    <h1 ref="mp">{{msg}}</h1>
+    <h1 ref="mp">{{msg}}</h1>
+    <div ref="mw">
+        <div v-for="a in arr" ref="ma">{{a}}</div>
+    </div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            msg:'hello',
+            arr:[1,2,3]
+        },
+        //vm.$el:vm上的数据
+        //vm.$watch:监控
+        //vm.$el:当前el元素
+        //vm.$set:后加的属性实现响应式的变化
+        //vm.$options:一些在vm上的自定义的属性
+        //vm.$nextTick( () => {} ):所有方法走完调用该方法(保证dom渲染完成，和setTimeOut类似)
+        mounted(){
+            //如果dom元素不是通过v-for循环出来的，ref重复的话只能获取一个
+            console.log(this.$refs.mp);
+            console.log(this.$refs.ma);
+            this.arr = [1,2,3,4,5];
+            console.log(this.$refs.mw);//显示5个子div,涉及到dom渲染的问题,是一个异步的方式
+            console.log(this.$refs.mw.children.length);//3，不能马上拿到最新的数据
+            this.$nextTick(()=>{//dom渲染完成后才执行的方法
+                console.log(this.$refs.mw.children.length);//5
+            });
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <blog
+        v-for="post in posts"
+        v-bind:key="post.id"
+        v-bind:p="post"
+    ></blog>
+    <template id="blog">
+        <div class="blog-post">
+            <h3>{{ this.p.title }}</h3>
+            <!--<div v-html="post.content"></div>-->
+            {{this.p}}
+        </div>
+    </template>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            posts:[{id:1,title:"title1",content:"111"},{id:2,title:"title2",content:"111"}]
+        },
+        components:{
+            blog:{
+                props:['p'],
+                template:"#blog"
+            }
+        }
+    });
+</script>
+</body>
+</html>

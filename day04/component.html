@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <!--组件分类：页面级组件：1.一个页面是一个组件-->
+    <!--                      2.将可复用的部分抽取出来 基础组件-->
+    <!--一个自定义组件，vue就会把它看成一个组件，vue会给它们赋予一定的意义-->
+    <!--用法：全局组件：可以声明一次再任何地方使用，一般写插件的时候用的比较多-->
+    <!--      局部组件：必须告诉这个组件属于谁-->
+    <my-handsome></my-handsome>
+    <!--组件名尽量不要大写，多个用"-"分割-->
+    <!--使用局部组件-->
+    <mucom1></mucom1>
+    <mucom2></mucom2>
+    <hr>
+    <div>parent
+        <div>child
+            <div>grandson</div>
+        </div>
+    </div>
+    <hr>
+    <!--组件嵌套，实现上面效果-->
+    <parent></parent>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    Vue.component('my-handsome'//组件名字，js可以转驼峰命名
+        ,{//一个对象可以看成一个组件
+            template:'<div>11    <span>{{msg}}</span></div>',
+            data(){//组件中的数据必须是函数类型，返回一个实例作为组件的数据
+                return {
+                    msg:'message'
+                };
+            }
+        });
+    //局部组件三部曲：创建组件----注册组件----使用组件
+    //组件是相互独立的，不能跨作用域，vm实例也是一个组件，所以在vm上的数据，其他组件中访问不到，组件中
+    //也拥有生命周期函数created()等等
+    //子组件不能使用父组件的数据(组件之间的数据交互)
+    //组件理论上可以无限嵌套
+    let obj = {school:'test'};
+    let mucom1 = {template:'<div>11111{{school}}</div>',
+        data(){//如果该组件中修改了school的值，也会反应到另一个公用的组件的数据上去
+            return obj;
+        },
+        method:{
+            //this指向自己的这个组件
+        }
+    };
+    let mucom2 = {template:'<div>22222{{school}}</div>',
+        data(){
+            return obj;
+        }
+    };
+    let grandson = {
+        template:'<div>grandson</div>'
+    };
+    let child = {
+        template:'<div>child</div>',
+        components: {grandson}
+    };
+    let parent = {
+        template:'<div>parent</div>',
+        components: {child}
+    };
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        components:{
+            //mucom1:mucom1 ES6中可以只写一个
+            mucom1,
+            mucom2:mucom2,
+            parent
+        }
+    });
+</script>
+<script src="node_modules/axios/dist/axios.js"></script>
+</body>
+</html>

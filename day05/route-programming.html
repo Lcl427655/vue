@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .active {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--编程式导航，在js里控制跳转-->
+    <!--to的两种方式写法都可以，:to可以动态的控制-->
+    <router-link to="/home" tag="button">首页</router-link>
+    <router-link :to="{path:'/list'}" tag="button">主页</router-link>
+    <hr>
+    <hr>
+    <router-view></router-view>
+</div>
+<!--npm install vue-router-->
+<!--yarn add命令-->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script src="./node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let home = {
+        template:`<div>首页<button @click="goList">去主页</button></button></div>`,
+        methods:{
+            goList(){
+                this.$router.push('/list');//强制跳转到目录
+                //replace(),路由的替换方法
+            }
+        }
+    };
+    let list = {
+        template:`<div>主页<button @click="goHome">回首页</button></div>`,
+        methods:{
+            goHome(){
+                this.$router.go(-1);//或者back(),同h5
+            }
+        }
+    };
+    let routes = [
+        {path:'',component:home},//默认显示的为首页，'/'或者''
+        {path:'/home',component:home},
+        {path:'/list',component:list},
+        //{path:'*',component:list}//都匹配不到的时候，匹配*
+        {path:'*',redirect:'/home'}//都匹配不到的时候，匹配*,重定向到一个路径
+    ];
+    let router = new VueRouter({
+        routes,
+        linkActiveClass:'active'
+    });
+    let vm = new Vue({
+        el: "#app",
+        router,//挂载在实例上以后，每个组件都有一个$router的属性，存的是方法，$route的属性，存的是属性
+        data: {}
+    });
+</script>
+</body>
+</html>

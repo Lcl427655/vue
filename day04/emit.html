@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    父亲:{{money}}
+    <!--:m="money" 绑定值，父传子-->
+    <!--@child-msg 自定义事件-->
+    <child :m="money" @child-msg="changeMoney"></child>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            money:400
+        },
+        methods:{
+            //父亲绑定事件，儿子触发事件，将数据传递到父亲，单向数据流，父亲数据刷新，儿子就刷新
+            changeMoney(val){//相当于xxx.on('child-msg'，changeMoney)
+                this.money = val;
+            }
+        },
+        components:{
+            child:{
+                props:['m'],
+                template:'<div>儿子:{{m}}<button @click="getMoney">多要钱</button></div>',
+                methods: {
+                    getMoney(){
+                        //触发自定义的事件，让父亲的方法执行
+                        this.$emit('child-msg',800);
+                    }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

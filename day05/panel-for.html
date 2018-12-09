@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <panel type="primary"  @say-title="saytit">
+        <!--say-title不要用驼峰命名，属性基本都是 - 分割-->
+        <div slot="title">Vue标题</div>
+        <div slot="content">Vue内容</div>
+        <div slot="footer">Vue结尾</div>
+    </panel>
+    <hr>
+    <!--组件v-for时候要加key-->
+    <panel v-for="article in articles" :type="article.type"  @say-title="saytit" :key="Math.random()">
+        <!--say-title不要用驼峰命名，属性基本都是 - 分割-->
+        <div slot="title"><span v-html="article.title"></span></div>
+        <div slot="content"><span v-html="article.content"></span></div>
+        <div slot="footer" v-if="article.footer"><span v-html="article.footer"></span></div>
+    </panel>
+</div>
+<template id="panel">
+    <div class="container">
+        <div class="row">
+            <div class="panel" :class="color">
+                <div class="panel-heading" ref="tit"><slot name="title"></slot></div>
+                <div class="panel-body"><slot name="content"></slot></div>
+                <div class="panel-footer"><slot name="footer"></slot><button @click="say">弹出父标题</button></div>
+            </div>
+        </div>
+    </div>
+</template>
+<!--npm install vue-router-->
+<!--yarn add命令-->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let panel = {
+        template: "#panel",
+        /*data(){
+            return {
+                color:['panel-' + this.type]
+            }
+        },*/
+        computed:{//或者使用上述的data方式，二选一
+            color(){
+                return ['panel-' + this.type]
+            }
+        },
+        methods:{
+            say(){
+                this.$emit('say-title',this.$refs.tit.innerText);
+            }
+        },
+        props: {
+            type: {
+                type:[String],
+                default:'default'
+            }
+        }
+    };
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            articles:[
+                {type:'warning',title:'<h1>vue1</h1>',content:'<div>content1</div>',footer:'<div>footer1</div>'},
+                {type:'primary',title:'<h1>vue2</h1>',content:'<div>content2</div>',footer:'<div>footer2</div>'},
+                {type:'success',title:'<h1>vue3</h1>',content:'<div>content3</div>'}
+                ]
+        },
+        components:{
+            panel
+        },
+        methods:{
+            saytit(val){
+                alert(val);
+            }
+        }
+    });
+</script>
+<script src="node_modules/axios/dist/axios.js"></script>
+</body>
+</html>

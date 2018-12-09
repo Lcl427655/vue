@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <!--vue自带的标签，例如template slot transition component等-->
+    <component is="ll"></component>
+    <component is="bb"></component>
+    ll<input type="radio" v-model="radio" value="ll">
+    bb<input type="radio" v-model="radio" value="bb">
+    <component :is="radio"></component>
+    <!--会将内容缓存起来，为了路由做准备，如果做了缓存，就不会再走钩子函数了-->
+    <keep-alive>
+        <component :is="radio"></component>
+    </keep-alive>
+    <!--子组件和父组件都含有amounted,会先触发子组件的mounted,因为父组件如果需要挂载，必须先挂载子组件-->
+    <child ref="child"></child>
+</div>
+<template id="child">
+    <div>
+        <ul>
+            <li v-for="a in arr">{{a}}</li>
+        </ul>
+    </div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script>
+    //正常组件创建的时候都会重新渲染
+    let ll = {
+        template:'<h1>lll</h1>',
+        mounted(){
+            console.log("ll挂载");
+        },
+        beforeDestroy(){
+            console.log("ll销毁");
+        }
+    };
+    let bb = {
+        template:'<div>bb</div>',
+        mounted(){
+            console.log("bb挂载");
+        },
+        beforeDestroy(){
+            console.log("bb销毁");
+        }
+    };
+    let child = {
+        template:"#child",
+        data(){
+            return {
+                arr:[1,2,3]
+            }
+        },
+        mounted(){
+            this.arr = [4,5,6]
+        }
+    }
+    let vm = new Vue({
+        el: "#app",
+        data: {radio:"ll"},
+        mounted(){
+            //mounted的数据挂载是异步的，此时如果利用ref获取的子组件的数据，
+            // 获取的是data函数中的数据，而不是在mounted中改的数据
+            //使用$nextTick获取的是挂载完成的数据
+            console.log(this.$refs.child.$el.innerHTML);//<ul><li>1</li><li>2</li><li>3</li></ul>
+            this.$nextTick(() => {
+                console.log(this.$refs.child.$el.innerHTML);//<ul><li>4</li><li>5</li><li>6</li></ul>
+            })
+        },
+        components:{
+            ll,
+            bb,
+            child
+        }
+    });
+</script>
+</body>
+</html>

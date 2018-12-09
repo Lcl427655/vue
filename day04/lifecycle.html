@@ -15,10 +15,46 @@
 <script src="node_modules/axios/dist/axios.js"></script>
 <script>
     let vm = new Vue({//根实例，初始化时候会调用很多方法（钩子函数，或者说是回调函数）
-        el:"#app",
+        el:"#app",////第三步   此处也可以省略，再vm后边加上     .$mount("#app") 两者必须存在一个
         data:{
-
+            a:1111
+        },
+        beforeCreate(){//第一步
+            //可以debugger调试
+            //基本用不到
+            //内部初始化
+        },
+        created(){//第二步
+            //初始化时候注册事件数据等
+            //ajax获取服务器数据
+        },
+        //template:"<div>{{a}}}</div>"//第四步，如果有template模板，则会用该模板内容替换页面上的div
+        //只能有一个根元素，不能是文本节点
+        beforeMount(){//第五步
+            //挂载之前调用，没有什么意义
+        },
+        mounted(){//第六步
+            //挂在之后调用，操作dom元素
+        },
+        //这两个方法依赖的是页面的数据，而不是实例上的数据
+        beforeUpdate(){//第七步
+          //页面数据更新之前调用，用watch来代替
+        },
+        updated(){//第八步
+            //数据更新之后调用，用watch来代替
+        },
+        beforeDestroy(){//第九步
+            //销毁前
+        },
+        destroyed(){//第十步
+            //销毁后
         }
+       // vm.$destroy();才会走销毁的方法，监听器等都会失效，在改变任何数据页面都不会变化
+        //钩子函数的生命周期,具体可参照文档vue实例-生命周期
+        //beforeCreate()    created()
+        //beforeMount()     mounted()
+        //beforeUpdate()    updated()
+        //beforeDestroy()   destroyed()
     });
 </script>
 </body>

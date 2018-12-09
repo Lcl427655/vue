@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <router-link to="/home" tag="button">首页</router-link>
+    <router-link :to="{path:'/detail'}" tag="button">详情</router-link>
+    <hr>
+    <hr>
+    <router-view></router-view>
+</div>
+<template id="detail">
+    <div>
+        <router-link to="/detail/profile" tag="button">profile</router-link><br>
+        <router-link to="/detail/about" tag="button">about</router-link>
+        <router-view></router-view>
+    </div>
+</template>
+<!--npm install vue-router-->
+<!--yarn add命令-->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script src="./node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let home = {
+        template: `<div>home</div>`,
+    };
+    let detail = {
+        template: '#detail',
+    };
+    let profile = {
+        template: `<div>profile</div>`,
+    };
+    let about = {
+        template: `<div>about</div>`,
+    };
+    let routes = [
+        {
+            path: '', component: home
+        },
+        {
+            path: '/home', component: home
+        },
+        {
+            path: '/detail', component: detail,
+            children:[//children中的路径永远不带'/','/表示的是一级路由'
+                {
+                    path: 'profile', component: profile
+                },
+                {
+                    path: 'about', component: about
+                }
+            ]
+        },
+        {
+            path: '*', redirect: '/home'
+        }
+    ];
+    let router = new VueRouter({
+        routes,
+        linkActiveClass: 'active'
+    });
+    let vm = new Vue({
+        el: "#app",
+        router,//挂载在实例上以后，每个组件都有一个$router的属性，存的是方法，$route的属性，存的是属性
+        data: {}
+    });
+</script>
+</body>
+</html>
