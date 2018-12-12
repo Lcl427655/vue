@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="app" v-cloak>
         <!-- msg前边也可以写this,没有用处 -->
@@ -21,27 +23,27 @@
         {{msg}}
         <input type="text" v-model="msg"><br>
         <!-- 单个checkbox的时候，会把值转换为true(选中)或者false(未选中) -->
-        <input type="checkbox" v-model="check">{{check}}<br/>
-        <input type="checkbox" v-model="check1">{{check1}}<br/>
+        <input type="checkbox" v-model="check">{{check}}<br />
+        <input type="checkbox" v-model="check1">{{check1}}<br />
         <!-- 多个checkbox选中会自动把vlaue值放入数组中,数组中有对应的值也会自动选中 -->
-        <input type="checkbox" v-model="check2" value="aaaaa">aaaaa<br/>
-        <input type="checkbox" v-model="check2" value="bbbbb">bbbbb<br/>
-        <input type="checkbox" v-model="check2" value="ccccc">ccccc<br/>
+        <input type="checkbox" v-model="check2" value="aaaaa">aaaaa<br />
+        <input type="checkbox" v-model="check2" value="bbbbb">bbbbb<br />
+        <input type="checkbox" v-model="check2" value="ccccc">ccccc<br />
         {{check2}}<br>
         <!-- 单选基本同多选 -->
-        <input type="radio" value="Runoob" v-model="picked">Runoob<br/>
-        <input type="radio" value="Google" v-model="picked">Google<br/>
-        {{picked}}<br/>
+        <input type="radio" value="Runoob" v-model="picked">Runoob<br />
+        <input type="radio" value="Google" v-model="picked">Google<br />
+        {{picked}}<br />
         <!-- 下拉框 -->
         <select v-model="selected" name="fruit">
             <option value="" disabled>选择一个网站</option>
             <option value="www.runoob.com">Runoob</option>
             <option value="www.google.com">Google</option>
-          </select>
+        </select>
 
-          <div id="output">
-              选择的网站是: {{selected}}
-          </div>
+        <div id="output">
+            选择的网站是: {{selected}}
+        </div>
         <!-- v-text取代{{}}，解决闪烁问题，但是麻烦吗，以v-cloak代替，解决块级闪烁问题，很少使用 -->
         <!-- v-once,只绑定一次，数据刷新不会导致视图刷新，写在不想刷新的标签上 -->
     </div>
@@ -50,19 +52,20 @@
     <script src="node_modules/vue/dist/vue.js"></script>
     <script>
         let vm = new Vue({
-            el:"#app",
+            el: "#app",
             methods: {
 
             },
             data: {
-                msg:"msg",
-                check:true,
-                check1:1,
-                check2:["aaaaa"],
-                picked : "Runoob",
+                msg: "msg",
+                check: true,
+                check1: 1,
+                check2: ["aaaaa"],
+                picked: "Runoob",
                 selected: ''
             }
         });
     </script>
 </body>
+
 </html>
