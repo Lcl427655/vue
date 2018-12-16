@@ -5,17 +5,19 @@ import Router from 'vue-router'
 import Home from '../components/Home.vue'
 import List from '../components/List.vue'
 import Add from '../components/Add.vue'
-import Star from '../components/Star.vue'
-import Error from '@/components/Error.vue'
+import MyInfo from '../components/MyInfo.vue'
+import CustomService from '../components/CustomService'
+import Error from '../components/Error.vue'
 
 Vue.use(Router)
 export default new Router({
   routes: [
-    {path:'/',component:Home},
+    {path:'/',redirect:'/home'},
     {path:'/home',component:Home},
     {path:'/add',component:Add},
     {path:'/list',component:List},
-    {path:'/star',component:Star},
+    {path:'/my',component:MyInfo},
+    {path:'/customService',component:CustomService},
     {path:'*',component:Error},
   ]
 })

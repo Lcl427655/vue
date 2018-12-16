@@ -1,51 +1,126 @@
 <template>
   <div id="app">
     <index-footer></index-footer>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import IndexFooter from './baseComponents/IndexFooter.vue'
-export default {
-  name: 'App',
-  components:{
-    'index-footer':IndexFooter
+  import IndexFooter from './baseComponents/IndexFooter.vue'
+
+  export default {
+    name: 'App',
+    components: {
+      'index-footer': IndexFooter
+    }
   }
-}
 </script>
 
 <style>
-  /***1: 初始样式设置*******/
-  html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img, div,span, table,th,tr,td,button { margin:0; padding:0; }
+  html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    color: #333;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+
   ul, ol {
     list-style: none;
   }
-  .hide {
-    display: none;
+
+  img {
+    border: none;
+    vertical-align: middle;
   }
-  /*******2: 清除浮动******/
-  /*IE6, IE7 生效*/
-  .floatfix{
-    *zoom:1;
+
+  a {
+    text-decoration: none;
+    color: #232323;
   }
-  /*其他浏览器*/
-  .floatfix:after{
-    content:"";
-    display:table;
-    clear:both;
+
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
   }
-  /***3: 超出长度显示省略号. 还需要设置width**/
-  .ellipsis {
-    text-overflow: ellipsis;
+
+  input, textarea {
+    outline: none;
+    border: none;
+  }
+
+  textarea {
+    resize: none;
+    overflow: auto;
+  }
+
+  .clearfix {
+    zoom: 1;
+  }
+
+  .clearfix:after {
+    content: ".";
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
     overflow: hidden;
+  }
+
+  .fl {
+    float: left
+  }
+
+  .fr {
+    float: right
+  }
+
+  .tl {
+    text-align: left;
+  }
+
+  .tc {
+    text-align: center
+  }
+
+  .tr {
+    text-align: right;
+  }
+
+  .ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
-  /****4: 兼容的 不继承 的透明度*****/
-  .rgba {
-    background: rgb(0,0,0); /*The Fallback color,这里也可以使用一张图片来代替*/
-    background: rgba(0, 0, 0,0.5);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000,endColorstr=#80000000)"; /*Filter for IE8 */
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#80000000, endColorstr=#80000000); /*Filter for older IEs */
+
+  .inline {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+  }
+
+  .index-content {
+    position: fixed;
+    top: 40px;
+    bottom: 45px;
+    width: 100%;
+    overflow: auto;
+    touch-action: none;
   }
 </style>

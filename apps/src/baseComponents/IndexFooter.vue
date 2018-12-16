@@ -1,43 +1,60 @@
 <template>
-    <div class="index-footer">
-      <mt-tabbar>
-        <mt-tab-item id="home">
-          <img slot="icon" src="../assets/home.png" @click="toHome">
-          <router-link to="/home">首页</router-link>
-        </mt-tab-item>
-        <mt-tab-item id="list">
-          <img slot="icon" src="../assets/list.png">
-          <router-link to="/list">列表</router-link>
-        </mt-tab-item>
-        <mt-tab-item id="add">
-          <img slot="icon" src="../assets/add.png">
-          <router-link to="/add">添加</router-link>
-        </mt-tab-item>
-        <mt-tab-item id="star">
-          <img slot="icon" src="../assets/star.png">
-          <router-link to="/star">收藏</router-link>
-        </mt-tab-item>
-      </mt-tabbar>
-    </div>
+  <div class="index-footer">
+    <router-link to="/home">
+      <i class="iconfont icon-shouye"></i>
+      <span>首页</span>
+    </router-link>
+    <router-link to="/list">
+      <i class="iconfont icon-liebiao"></i>
+      <span>列表</span>
+    </router-link>
+    <router-link to="/customService">
+      <i class="iconfont icon-kefu"></i>
+      <span>客服</span>
+    </router-link>
+    <router-link to="/add">
+      <i class="iconfont icon-add"></i>
+      <span>添加</span>
+    </router-link>
+    <router-link to="/my">
+      <i class="iconfont icon-wode"></i>
+      <span>我的</span>
+    </router-link>
+  </div>
 </template>
 <script>
-export default {
+  export default {
     data() {
-        return {}
+      return {}
     },
     methods: {
-      toHome(){
-        location.href = '/home';
+      toHome() {
       }
     },
     computed: {},
     components: {}
-}
+  }
 </script>
 <style scoped lang="less">
-  .index-footer{
-    a{
+  .index-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    background-color: #e9ecef;
+    a {
+      color: #005cbf;
+      display: flex;
+      flex: 1; //flex布局，每个占一份
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
       text-decoration: none;
+    }
+    a.router-link-active {
+      color: red;
     }
   }
 </style>

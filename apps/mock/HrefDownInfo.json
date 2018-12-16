@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "isSelected": false,
+    "title": "标题一",
+    "detailInfo": "描述一",
+    "imageUrl": "/static/download/1.jpg",
+    "downloadUrl": "下载链接一"
+  },
+  {
+    "id": 2,
+    "isSelected": false,
+    "title": "标题二",
+    "detailInfo": "描述二",
+    "imageUrl": "/static/download/2.jpg",
+    "downloadUrl": "下载链接二"
+  },
+  {
+    "id": 3,
+    "isSelected": false,
+    "title": "标题三标题三标题三标题三标题三标题三标题三标题三标题三标题三标题三",
+    "detailInfo": "描述三描述三描述三描述三描述三描述三描述三描述三描述三",
+    "imageUrl": "/static/download/3.jpg",
+    "downloadUrl": "下载链接三"
+  },
+  {
+    "id": 4,
+    "isSelected": false,
+    "title": "标题四",
+    "detailInfo": "描述四",
+    "imageUrl": "/static/download/4.jpg",
+    "downloadUrl": "下载链接四"
+  },
+  {
+    "id": 5,
+    "isSelected": false,
+    "title": "标题五",
+    "detailInfo": "描述五",
+    "imageUrl": "/static/download/5.jpg",
+    "downloadUrl": "下载链接五"
+  },
+  {
+    "id": 6,
+    "isSelected": false,
+    "title": "标题六",
+    "detailInfo": "描述六",
+    "imageUrl": "/static/download/6.jpg",
+    "downloadUrl": "下载链接六"
+  },
+  {
+    "id": 7,
+    "isSelected": false,
+    "title": "标题七",
+    "detailInfo": "描述七",
+    "imageUrl": "/static/download/7.jpg",
+    "downloadUrl": "下载链接七"
+  }
+]

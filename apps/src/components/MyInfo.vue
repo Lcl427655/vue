@@ -1,6 +1,6 @@
 <template>
     <div>
-      收藏页
+      我的
     </div>
 </template>
 <script>
