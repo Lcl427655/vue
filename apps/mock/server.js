@@ -36,9 +36,12 @@ http.createServer((req, res) => {
     switch (req.method) {
       case 'GET':
         if(id){
-
+          read(function (hrefInfos) {
+            let hrefInfo = hrefInfos.find(item => item.id === id);
+            if(!hrefInfo) hrefInfo = {};
+            return res.end(JSON.stringify(hrefInfo));
+          });
         }else{//没有id获取所有图书
-          console.log(11111);
           read(function (hrefInfos) {
             return res.end(JSON.stringify(hrefInfos));
           });
@@ -47,8 +50,20 @@ http.createServer((req, res) => {
       case 'POST':
         break;
       case 'DELETE':
+        return res.end(JSON.stringify('{"flag":true}'));
         break;
       case 'PUT':
+        if(id){
+          let str = '';
+          req.on('data' , data => {
+            console.log(data);
+            str += data;
+          });
+          req.on('end' , () => {
+            console.log(JSON.parse(str));
+          });
+        }
+        return res.end(JSON.stringify('{"flag":true}'));
         break;
       default:
 

@@ -8,6 +8,7 @@ import Add from '../components/Add.vue'
 import MyInfo from '../components/MyInfo.vue'
 import CustomService from '../components/CustomService'
 import Error from '../components/Error.vue'
+import DetailDown from '../components/detail/DetailDown';
 
 Vue.use(Router)
 export default new Router({
@@ -18,6 +19,7 @@ export default new Router({
     {path:'/list',component:List},
     {path:'/my',component:MyInfo},
     {path:'/customService',component:CustomService},
+    {path:'/detailDown/:id',component:DetailDown,name:'detailDown'},
     {path:'*',component:Error},
   ]
 })

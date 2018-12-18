@@ -8,14 +8,32 @@ axios.interceptors.response.use((res) => {
 });
 
 //返回真的是一个Promise对象
+//获取轮播图
 export let getSliders = () => {
   return axios.get('/sliders');
 }
 
+//获取首页展示
 export let getHotDowns = () => {
   return axios.get('/hotDown');
 }
 
+//获取列表
 export let getHrefDowns = () => {
   return axios.get('/hrefDown');
+}
+
+//根据id获取
+export let getHrefDown = (id) => {
+  return axios.get(`/hrefDown?id=${id}`);
+}
+
+//根据id删除
+export let deleteHrefDown = (id) => {
+  return axios.delete(`/hrefDown?id=${id}`);
+}
+
+//根据id修改
+export let updateHrefDown = (id,data) => {
+  return axios.put(`/hrefDown?id=${id}`,data);
 }

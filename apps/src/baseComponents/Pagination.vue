@@ -89,15 +89,14 @@
 <style lang="less">
   .pagination {
     overflow: hidden;
-    display: table;
+    display: flex;
     margin: 0 auto;
     width: 100%;
     height: 50px;
     li {
-      float: left;
+      flex: 1;
       height: 30px;
       border-radius: 5px;
-      margin: 3px;
       color: #666;
       &
       :hover {
@@ -107,22 +106,18 @@
         }
       }
       a {
-        display: block;
-        width: 30px;
         height: 30px;
         text-align: center;
         line-height: 30px;
-        font-size: 12px;
         border-radius: 5px;
         text-decoration: none
       }
     }
     .active {
       background: #000;
-      a {
+      /*a {
         color: #fff;
-      }
-
+      }*/
     }
   }
 </style>

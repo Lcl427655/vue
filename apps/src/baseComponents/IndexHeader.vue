@@ -1,18 +1,12 @@
 <template>
-  <div>
+  <div class="index-header">
     <mt-header :title="title">
+      <!--router-link的tag属性可以改成基本标签，不写的话默认为a标签，tag="buuton",tag="ul"-->
       <router-link to="/home" slot="left">
         <mt-button icon="back" v-show="back" @click="backUp">返回</mt-button>
       </router-link>
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
-    <!--<mt-header title="multiple button">
-      <router-link to="/" slot="left">
-        <mt-button icon="back">back</mt-button>
-        <mt-button @click="handleClose">close</mt-button>
-      </router-link>
-      <mt-button icon="more" slot="right"></mt-button>
-    </mt-header>-->
   </div>
 </template>
 <script>
@@ -36,6 +30,8 @@
     components: {}
   }
 </script>
-<style scoped>
-
+<style scoped lang="less">
+  .index-header{
+    z-index: 5000;
+  }
 </style>

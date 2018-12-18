@@ -7,7 +7,7 @@
       <table class="table text-center">
         <thead>
         <tr>
-          <th class="th-info-1"><input type="checkbox" v-model="flag" class="">全选</th>
+          <th class="th-info-1"><input type="checkbox" v-model="checkAll">全选</th>
           <th class="th-info-2">标题</th>
           <th class="th-info-3">缩略图</th>
           <th class="th-info-4">描述</th>
@@ -17,7 +17,7 @@
         <tbody>
         <tr v-for="(info,index) in hrefDownInfos">
           <td>
-            <input type="checkbox" v-model="flag" class="">
+            <input type="checkbox" v-model="info.isSelected">
           </td>
           <td>
             {{info.title}}
@@ -26,15 +26,25 @@
             <img :src="info.imageUrl" :alt="info.downloadUrl" width="50px" height="50px">
           </td>
           <td>{{info.detailInfo}}</td>
-          <td><i class="iconfont icon-xiangqing"></i></td>
+          <td>
+            <router-link :to="{name:'detailDown',params:{id:info.id}}">
+              <i class="iconfont icon-xiangqing"></i>
+            </router-link>
+
+          </td>
         </tr>
         </tbody>
         <tfoot>
-          <tr>
-            <td colspan="5">
-              <pagination :total="total" :current-page='current' @pagechange="pagechange"></pagination>
-            </td>
-          </tr>
+        <tr>
+          <td colspan="5">
+            <mt-button type="danger" size="small" @click="deleteBatch">批量删除</mt-button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="5">
+            <pagination :total="total" :current-page='current' @pagechange="pagechange"></pagination>
+          </td>
+        </tr>
         </tfoot>
       </table>
     </div>
@@ -42,18 +52,21 @@
 </template>
 <script>
   import IndexHeader from '../baseComponents/IndexHeader';
-  import {getHrefDowns} from '../api';
-  import 'bootstrap/dist/css/bootstrap.min.css'
-  import Pagination from '../baseComponents/Pagination'
+  import {getHrefDowns, deleteHrefDown} from '../api';
+  import 'bootstrap/dist/css/bootstrap.min.css';
+  import Pagination from '../baseComponents/Pagination';
+  import {Toast} from 'mint-ui';
+
   export default {
     data() {
       return {
         title: '列表页',
-        hrefDownInfos: [],
-        flag: false,
-        total: 150,     // 记录总条数
-        display: 4,   // 每页显示条数
-        current: 1,   // 当前的页数
+        hrefDownInfos: [],//列表所有数据
+        hrefDownInfosCheck: [],//选中的数据
+        deleteFlag: false,//删除结果
+        total: 150,// 记录总条数
+        display: 4,// 每页显示条数
+        current: 1,// 当前的页数
       }
     },
     created() {
@@ -64,15 +77,53 @@
       async getHrefDown() {
         this.hrefDownInfos = await getHrefDowns();
       },
-      pagechange:function(currentPage){
-        console.log(currentPage);
+      pagechange(currentPage) {
         // ajax请求, 向后台发送 currentPage, 来获取对应的数据
+      },
+      deleteBatch() {//待定：需要改成批量传id
+        this.hrefDownInfosCheck = this.hrefDownInfos.filter(item => item.isSelected);
+        if (this.hrefDownInfosCheck.length === 0) {
+          let instance = Toast('未选中任何数据');
+          setTimeout(() => {
+            instance.close();
+          }, 500);
+        }
+        this.hrefDownInfosCheck.forEach(
+          async item => {
+            try {
+              //发送两次请求，第一次是OPTIONS
+              this.deleteFlag = JSON.parse(await deleteHrefDown(item.id)).flag;
+              if (this.deleteFlag) {//如果放在forEach外部，需要同步方式
+                //修改页面数据
+                this.hrefDownInfos = this.hrefDownInfos.filter(item => !item.isSelected);
+                let instance = Toast({
+                  message: '删除成功',
+                  iconClass: 'icon icon-success'
+                });
+                setTimeout(() => {
+                  instance.close();
+                }, 1000);
+              }
+            } catch (e) {
+              this.deleteFlag = false;
+            }
+          }
+        );
       }
     },
-    computed: {},
+    computed: {
+      checkAll: {
+        set(val) {
+          this.hrefDownInfos.map(item => item.isSelected = val)
+        },
+        get() {
+          return this.hrefDownInfos.every(item => item.isSelected);
+        }
+      }
+    },
     components: {
       'index-header': IndexHeader,
-      'pagination':Pagination
+      'pagination': Pagination
     }
   }
 </script>
@@ -93,11 +144,12 @@
     .th-info-5 {
       width: 20%;
     }
-    tr td{
+    tr td {
+      text-align: center;
       margin: 0 auto;
       vertical-align: middle;
       overflow: hidden;
-      text-overflow:ellipsis;
+      text-overflow: ellipsis;
       white-space: nowrap;
     }
   }
