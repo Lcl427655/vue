@@ -4,7 +4,7 @@ let url = require('url');
 let sliders = require('./sliders.js')
 
 function read(callback) {
-  fs.readFile('./HrefDownInfo.json', 'utf8', function (err, data) {
+  fs.readFile('C:/Users/lcl/Desktop/test/vue/vue/apps/mock/HrefDownInfo.json', 'utf8', function (err, data) {
     if (err || data.length == 0) {
       return callback([]);
     } else {
