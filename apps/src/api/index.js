@@ -37,3 +37,12 @@ export let deleteHrefDown = (id) => {
 export let updateHrefDown = (id,data) => {
   return axios.put(`/hrefDown?id=${id}`,data);
 }
+
+//获取首页全部的数据
+export let getHomeAll = () => {
+  return axios.all([getSliders(),getHotDowns()]);
+}
+
+export let getPageHrefInfos = (page,pageSize) => {
+  return axios.get(`/page?page=${page}&pageSize=${pageSize}`);
+}

@@ -1,10 +1,10 @@
 let http = require('http');
 let fs = require('fs');
 let url = require('url');
-let sliders = require('./sliders.js')
+let sliders = require('./sliders.js');
 
 function read(callback) {
-  fs.readFile('C:/Users/lcl/Desktop/test/vue/vue/apps/mock/HrefDownInfo.json', 'utf8', function (err, data) {
+  fs.readFile('./HrefDownInfo.json', 'utf8', function (err, data) {
     if (err || data.length == 0) {
       return callback([]);
     } else {
@@ -28,7 +28,20 @@ http.createServer((req, res) => {
   }
   if (pathname === '/hotDown') {
     read(function (hrefInfos) {
-      return res.end(JSON.stringify(hrefInfos));
+      setTimeout(() => {
+        return res.end(JSON.stringify(hrefInfos));
+      },2000);
+    });
+  }
+  if (pathname === '/page') {
+    let page = parseInt(query.page) || 1;//起始页
+    let pageSize = parseInt(query.pageSize) || 5;//每页条数
+    let PageHrefInfos = {};
+    read(function (hrefInfos) {
+      PageHrefInfos.totalPage = hrefInfos.length;
+      //0-3 4-7 8-11
+      PageHrefInfos.hrefInfos = hrefInfos.slice((page - 1) + pageSize * (page - 1), page - 1 + pageSize * page);
+      return res.end(JSON.stringify(PageHrefInfos));
     });
   }
   if(pathname === '/hrefDown'){//?id=1
@@ -56,17 +69,23 @@ http.createServer((req, res) => {
         if(id){
           let str = '';
           req.on('data' , data => {
-            console.log(data);
             str += data;
           });
           req.on('end' , () => {
-            console.log(JSON.parse(str));
           });
         }
         return res.end(JSON.stringify('{"flag":true}'));
         break;
       default:
-
     }
   }
+  fs.stat('.' + pathname , function (err,status) {
+    console.log(pathname);
+    if(err){
+      res.statusCode = 404 ;
+      res.end('NOT FOUND');
+    }else {
+      fs.createReadStream('.' + pathname).pipe(res);
+    }
+  })
 }).listen(8888);

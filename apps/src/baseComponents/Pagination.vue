@@ -11,7 +11,7 @@
   </nav>
 </template>
 
-<script type="es6">
+<script>
   export default {
     data() {
       return {
@@ -25,7 +25,7 @@
       },
       display: {// 每页显示条数
         type: Number,
-        default: 10
+        default: 5
       },
       currentPage: {// 当前页码
         type: Number,
@@ -79,7 +79,7 @@
       setCurrent: function (idx) {
         if (this.current != idx && idx > 0 && idx < this.page + 1) {
           this.current = idx;
-          this.$emit('pagechange', this.current);
+          this.$emit('pagechange', this.current,this.display);
         }
       }
     }
@@ -114,10 +114,10 @@
       }
     }
     .active {
-      background: #000;
-      /*a {
+      background: #26a2ff;
+      a {
         color: #fff;
-      }*/
+      }
     }
   }
 </style>

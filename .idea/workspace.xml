@@ -5,50 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb73129c-e306-46c7-a424-4f57a160ebae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/26427.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/mock/HrefDownInfo.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/mock/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/mock/sliders.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/api/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/assets/icon/iconfont.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/assets/icon/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/assets/icon/iconfont.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/assets/icon/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/assets/icon/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/assets/icon/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/baseComponents/IndexHeader.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/baseComponents/IndexSwipe.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/baseComponents/IndexSwipe1.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/baseComponents/Pagination.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/components/CustomService.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/src/components/info/HotDown.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/download/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/download/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/download/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/download/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/download/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/download/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/download/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/swipe/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/swipe/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/static/swipe/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/css/app.50874aa70d06553eede2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/css/app.50874aa70d06553eede2.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/css/manifest.50874aa70d06553eede2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/css/manifest.50874aa70d06553eede2.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/download/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/download/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/download/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/download/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/download/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/download/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/download/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/fonts/iconfont.00da94e.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/fonts/iconfont.4bc77e1.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/img/iconfont.dfc62de.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/0.e768e32ec11a0b6eee19.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/0.e768e32ec11a0b6eee19.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/1.eae711c47a54fa2cd76e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/1.eae711c47a54fa2cd76e.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/3.65e9546c06fd9a78ee2e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/3.65e9546c06fd9a78ee2e.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/4.e6f1303ea32cebd8c024.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/4.e6f1303ea32cebd8c024.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/5.791608a2598e40e920eb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/5.791608a2598e40e920eb.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/6.87f55f639abb1ecfd3c8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/6.87f55f639abb1ecfd3c8.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/7.357f7b543863841f4fe8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/7.357f7b543863841f4fe8.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/8.08e4bb0ff09099f286b8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/8.08e4bb0ff09099f286b8.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/9.635bd1f00e431c510dd9.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/9.635bd1f00e431c510dd9.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/manifest.25ad206cd53011962b80.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/js/manifest.25ad206cd53011962b80.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/swipe/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/swipe/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mock/static/swipe/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/src/baseComponents/Loading.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/26427.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/26427.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/apps/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/build/webpack.base.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/build/webpack.prod.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/build/webpack.prod.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mock/HrefDownInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mock/HrefDownInfo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mock/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mock/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/src/assets/add.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/src/assets/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/src/assets/list.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/src/assets/star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/src/baseComponents/IndexFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/baseComponents/IndexFooter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/src/components/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/components/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/src/baseComponents/Pagination.vue" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/baseComponents/Pagination.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/components/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/src/components/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/components/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/src/components/Star.vue" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/components/MyInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day02/computed.html" beforeDir="false" afterPath="$PROJECT_DIR$/day02/computed.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -63,44 +73,48 @@
     <session id="209713483">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="29" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="11" />
-          <entry key="project.open.time.5" value="9" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.open.time.5" value="11" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="babelrc" value="10" />
+          <entry key="babelrc" value="12" />
           <entry key="cmd" value="1" />
           <entry key="css" value="12" />
-          <entry key="html" value="89" />
+          <entry key="html" value="96" />
           <entry key="jpg" value="18" />
-          <entry key="js" value="175" />
+          <entry key="js" value="208" />
           <entry key="js1" value="3" />
-          <entry key="json" value="57" />
+          <entry key="json" value="65" />
           <entry key="less" value="4" />
+          <entry key="map" value="2" />
           <entry key="md" value="2" />
           <entry key="png" value="23" />
+          <entry key="shjs" value="1" />
           <entry key="ts" value="8" />
           <entry key="txt" value="3" />
-          <entry key="vue" value="75" />
+          <entry key="vue" value="89" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="12" />
-          <entry key="HTML" value="89" />
+          <entry key="HTML" value="96" />
           <entry key="Image" value="41" />
-          <entry key="JSON" value="67" />
-          <entry key="JavaScript" value="175" />
+          <entry key="JSON" value="77" />
+          <entry key="JavaScript" value="209" />
           <entry key="Less" value="4" />
           <entry key="PLAIN_TEXT" value="9" />
+          <entry key="SourceMap" value="2" />
           <entry key="TypeScript" value="8" />
-          <entry key="Vue.js" value="75" />
+          <entry key="Vue.js" value="89" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -108,23 +122,23 @@
           <entry key="babelrc" value="44" />
           <entry key="css" value="36" />
           <entry key="html" value="17460" />
-          <entry key="js" value="5492" />
+          <entry key="js" value="7040" />
           <entry key="js1" value="45" />
-          <entry key="json" value="199" />
+          <entry key="json" value="254" />
           <entry key="less" value="56" />
           <entry key="txt" value="4" />
-          <entry key="vue" value="3635" />
+          <entry key="vue" value="7457" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="36" />
           <entry key="HTML" value="17460" />
-          <entry key="JSON" value="243" />
-          <entry key="JavaScript" value="5492" />
+          <entry key="JSON" value="298" />
+          <entry key="JavaScript" value="7040" />
           <entry key="Less" value="56" />
           <entry key="PLAIN_TEXT" value="49" />
-          <entry key="Vue.js" value="3635" />
+          <entry key="Vue.js" value="7457" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -137,63 +151,53 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/src/App.vue">
+        <entry file="file://$PROJECT_DIR$/apps/mock/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/src/components/List.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="842">
-              <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+            <state relative-caret-position="433">
+              <caret line="87" column="44" lean-forward="true" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
               <folding>
-                <element signature="e#1024#1080#0" expanded="true" />
+                <element signature="e#812#839#0" />
+                <element signature="e#871#921#0" />
+                <element signature="e#953#1089#0" />
+                <element signature="e#1118#1531#0" />
+                <element signature="e#1562#2464#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/src/baseComponents/Pagination.vue">
+        <entry file="file://$PROJECT_DIR$/apps/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/mock/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/src/api/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/src/components/info/HotDown.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-540">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="-165">
               <folding>
-                <element signature="e#227#249#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#189#238#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/src/router/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/config/index.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/mock/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -231,6 +235,16 @@
       <find>Swipe</find>
       <find>index-content</find>
       <find>;</find>
+      <find>flag</find>
+      <find>aler</find>
+      <find>fadeIn</find>
+      <find>log</find>
+      <find>currentPage</find>
+      <find>display</find>
+      <find>CommonsChunkPlugin</find>
+      <find>extract-text-webpack-plugin</find>
+      <find>contenthashhash</find>
+      <find>contenthash</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -250,9 +264,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/day07/src/components/List.vue" />
-        <option value="$PROJECT_DIR$/day07/src/App.vue" />
-        <option value="$PROJECT_DIR$/day07/src/router/router.js" />
         <option value="$PROJECT_DIR$/day07/src/index.js" />
         <option value="$PROJECT_DIR$/cbs/utils/utils.js" />
         <option value="$PROJECT_DIR$/cbs/src/components/Home.vue" />
@@ -278,29 +289,32 @@
         <option value="$PROJECT_DIR$/cbs/package.json" />
         <option value="$PROJECT_DIR$/app/package.json" />
         <option value="$PROJECT_DIR$/apps/build/webpack.dev.conf.js" />
-        <option value="$PROJECT_DIR$/apps/build/webpack.prod.conf.js" />
         <option value="$PROJECT_DIR$/apps/package.json" />
-        <option value="$PROJECT_DIR$/apps/build/webpack.base.conf.js" />
         <option value="$PROJECT_DIR$/apps/.babelrc" />
         <option value="$PROJECT_DIR$/apps/src/components/Add.vue" />
         <option value="$PROJECT_DIR$/apps/mock/sliders.js" />
         <option value="$PROJECT_DIR$/apps/src/baseComponents/IndexSwipe.vue" />
         <option value="$PROJECT_DIR$/apps/src/components/CustomService.vue" />
         <option value="$PROJECT_DIR$/apps/src/components/MyInfo.vue" />
-        <option value="$PROJECT_DIR$/apps/src/App.vue" />
         <option value="$PROJECT_DIR$/apps/src/main.js" />
         <option value="$PROJECT_DIR$/apps/src/assets/icon/iconfont.css" />
         <option value="$PROJECT_DIR$/apps/mock/aa.json" />
         <option value="$PROJECT_DIR$/apps/src/baseComponents/IndexFooter.vue" />
-        <option value="$PROJECT_DIR$/apps/src/components/Home.vue" />
-        <option value="$PROJECT_DIR$/apps/src/baseComponents/IndexHeader.vue" />
-        <option value="$PROJECT_DIR$/apps/src/router/index.js" />
-        <option value="$PROJECT_DIR$/apps/mock/server.js" />
-        <option value="$PROJECT_DIR$/apps/src/api/index.js" />
         <option value="$PROJECT_DIR$/apps/src/components/info/HotDown.vue" />
+        <option value="$PROJECT_DIR$/apps/src/baseComponents/IndexHeader.vue" />
+        <option value="$PROJECT_DIR$/day02/computed.html" />
+        <option value="$PROJECT_DIR$/apps/src/components/detail/DetailDown.vue" />
+        <option value="$PROJECT_DIR$/apps/src/components/Home.vue" />
+        <option value="$PROJECT_DIR$/apps/src/baseComponents/Loading.vue" />
+        <option value="$PROJECT_DIR$/apps/src/App.vue" />
+        <option value="$PROJECT_DIR$/apps/src/api/index.js" />
         <option value="$PROJECT_DIR$/apps/mock/HrefDownInfo.json" />
         <option value="$PROJECT_DIR$/apps/src/components/List.vue" />
         <option value="$PROJECT_DIR$/apps/src/baseComponents/Pagination.vue" />
+        <option value="$PROJECT_DIR$/apps/src/router/index.js" />
+        <option value="$PROJECT_DIR$/apps/build/webpack.base.conf.js" />
+        <option value="$PROJECT_DIR$/apps/build/webpack.prod.conf.js" />
+        <option value="$PROJECT_DIR$/apps/mock/server.js" />
       </list>
     </option>
   </component>
@@ -313,6 +327,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/apps/node_modules" />
     <handled-path value="$PROJECT_DIR$/day01/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day02/node_modules" />
     <handled-path value="$PROJECT_DIR$/day03/node_modules" />
     <handled-path value="$PROJECT_DIR$/day04/node_modules" />
     <handled-path value="$PROJECT_DIR$/day05/node_modules" />
@@ -323,14 +338,7 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/apps/package.json" />
       <path value="$PROJECT_DIR$/day01/package.json" />
-      <path value="$PROJECT_DIR$/day02/node_modules/animate.css/package.json" />
-      <path value="$PROJECT_DIR$/day02/node_modules/axios/package.json" />
-      <path value="$PROJECT_DIR$/day02/node_modules/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/day02/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/day02/node_modules/follow-redirects/package.json" />
-      <path value="$PROJECT_DIR$/day02/node_modules/is-buffer/package.json" />
-      <path value="$PROJECT_DIR$/day02/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/day02/node_modules/vue/package.json" />
+      <path value="$PROJECT_DIR$/day02/package.json" />
       <path value="$PROJECT_DIR$/day03/package.json" />
       <path value="$PROJECT_DIR$/day04/package.json" />
       <path value="$PROJECT_DIR$/day05/package.json" />
@@ -355,7 +363,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -367,6 +374,12 @@
               <item name="vue" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vue" type="b2602c69:ProjectViewProjectNode" />
@@ -385,77 +398,13 @@
               <item name="vue" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="icon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="baseComponents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="info" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="day02" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="day03" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue" type="462c0819:PsiDirectoryNode" />
-              <item name="day04" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -469,17 +418,18 @@
     <property name="ts.external.directory.path" value="E:\software\WebStorm2018.2.6\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\project\vue\apps\static" />
-      <recent name="F:\project\vue\apps\src\assets\icon" />
-      <recent name="F:\project\vue\day06\dist" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\project\vue\apps\src\assets\icon" />
       <recent name="F:\project\vue\apps\static\download" />
       <recent name="F:\project\vue\apps\src\components" />
       <recent name="F:\project\vue\apps\src\assets\iconALi" />
       <recent name="F:\project\vue\apps\src\baseComponents" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\project\vue\apps\mock" />
+      <recent name="F:\project\vue\apps\static" />
+      <recent name="F:\project\vue\apps\src\assets\icon" />
+      <recent name="F:\project\vue\day06\dist" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -560,6 +510,12 @@
       <workItem from="1544925014362" duration="1328000" />
       <workItem from="1544926377677" duration="3924000" />
       <workItem from="1544930528124" duration="35123000" />
+      <workItem from="1545047510688" duration="12730000" />
+      <workItem from="1545134430667" duration="8226000" />
+      <workItem from="1545143065096" duration="51000" />
+      <workItem from="1545219415619" duration="6939000" />
+      <workItem from="1545305955018" duration="7242000" />
+      <workItem from="1545315265585" duration="4755000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1543925410603</created>
@@ -572,7 +528,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205501000" />
+    <option name="totallyTimeSpent" value="245444000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -583,14 +548,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329429" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21407625" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.13929619" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32991204" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.16715543" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991204" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.13343109" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -609,120 +574,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/node_modules/less/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/assets/icon/star.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/assets/icon/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/assets/icon/list.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/assets/icon/home.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/assets/icon/back.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/node_modules/mint-ui/packages/header/src/header.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/node_modules/mint-ui/src/style/var.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/node_modules/mint-ui/packages/button/src/button.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="33" column="79" selection-start-line="33" selection-start-column="73" selection-end-line="33" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/node_modules/vue/types/options.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/node_modules/mint-ui/lib/mint-ui.common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="1007" column="2" selection-start-line="1007" selection-start-column="2" selection-end-line="1007" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/.babelrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/baseComponents/IndexSwipe1.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/static/swipe/2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/static/swipe/3.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/static/swipe/1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/assets/iconALi/iconfont.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/components/CustomService.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/components/Error.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/assets/icon/add.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#189#238#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/components/Add.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/static/download/2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/static/download/3.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/static/download/4.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/static/download/5.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/static/download/6.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -746,13 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/src/baseComponents/IndexSwipe.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -766,20 +610,6 @@
           <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#76#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day03/checkAll.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/day02/index.html">
       <provider selected="true" editor-type-id="text-editor" />
@@ -795,41 +625,6 @@
         <state relative-caret-position="-972" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/baseComponents/IndexHeader.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/components/Home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/baseComponents/IndexFooter.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/mock/HrefDownInfo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-513">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/src/assets/icon/iconfont.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -837,44 +632,233 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/node_modules/shelljs/bin/shjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day01/todo.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/modifires.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/checkAll.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-756">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day02/computed.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/node_modules/mint-ui/packages/button/src/button.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1107">
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/baseComponents/Loading.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/baseComponents/IndexHeader.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/baseComponents/IndexFooter.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="52" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/src/components/List.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="842">
-          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
-          <folding>
-            <element signature="e#1024#1080#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/src/components/info/HotDown.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#227#249#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/mock/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        <state relative-caret-position="2295">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/src/baseComponents/Pagination.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+        <state relative-caret-position="2808">
+          <caret line="104" column="18" lean-forward="true" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/HrefDownInfo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1701">
+          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/components/detail/DetailDown.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2052">
+          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+          <folding>
+            <element signature="e#1160#1219#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/components/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/components/info/HotDown.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/components/Error.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/build/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/build/webpack.base.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/build/webpack.prod.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/0.e768e32ec11a0b6eee19.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/1.eae711c47a54fa2cd76e.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/3.65e9546c06fd9a78ee2e.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/4.e6f1303ea32cebd8c024.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/5.791608a2598e40e920eb.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/6.87f55f639abb1ecfd3c8.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/7.357f7b543863841f4fe8.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/8.08e4bb0ff09099f286b8.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/9.635bd1f00e431c510dd9.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/static/js/0.e768e32ec11a0b6eee19.js.map">
+      <provider editor-type-id="sourcemapFileViewerProvider" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/config/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/mock/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="87" column="44" lean-forward="true" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+          <folding>
+            <element signature="e#812#839#0" />
+            <element signature="e#871#921#0" />
+            <element signature="e#953#1089#0" />
+            <element signature="e#1118#1531#0" />
+            <element signature="e#1562#2464#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#189#238#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

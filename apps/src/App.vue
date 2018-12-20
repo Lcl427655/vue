@@ -1,7 +1,17 @@
 <template>
   <div id="app">
     <index-footer></index-footer>
-    <router-view></router-view>
+
+    <transition name="fadeIn">
+      <keep-alive>
+        <!--需要缓存的数据-->
+        <router-view v-show="$route.meta.keepAlive"></router-view>
+      </keep-alive>
+    </transition>
+    <transition name="fadeIn">
+      <!--无需缓存的数据-->
+      <router-view v-show="!$route.meta.keepAlive"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -122,5 +132,16 @@
     width: 100%;
     overflow: auto;
     touch-action: none;
+  }
+
+  .fadeIn-enter{
+    opacity: 0;
+  }
+  .fadeIn-enter-active{
+    transition: all 1s linear;
+  }
+  .fadeIn-leave-active{
+    transition: all 1s linear;
+    opacity: 0;
   }
 </style>

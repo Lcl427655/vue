@@ -15,7 +15,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(info,index) in hrefDownInfos">
+        <tr v-for="info in hrefDownInfos">
           <td>
             <input type="checkbox" v-model="info.isSelected">
           </td>
@@ -42,7 +42,7 @@
         </tr>
         <tr>
           <td colspan="5">
-            <pagination :total="total" :current-page='current' @pagechange="pagechange"></pagination>
+            <pagination :display="pageSize" :total="totalPage" :current-page='page' @pagechange="pagechange"></pagination>
           </td>
         </tr>
         </tfoot>
@@ -52,7 +52,7 @@
 </template>
 <script>
   import IndexHeader from '../baseComponents/IndexHeader';
-  import {getHrefDowns, deleteHrefDown} from '../api';
+  import {getHrefDowns, deleteHrefDown,getPageHrefInfos} from '../api';
   import 'bootstrap/dist/css/bootstrap.min.css';
   import Pagination from '../baseComponents/Pagination';
   import {Toast} from 'mint-ui';
@@ -64,21 +64,29 @@
         hrefDownInfos: [],//列表所有数据
         hrefDownInfosCheck: [],//选中的数据
         deleteFlag: false,//删除结果
-        total: 150,// 记录总条数
-        display: 4,// 每页显示条数
-        current: 1,// 当前的页数
+        totalPage: 0,// 记录总条数
+        pageSize: 5,// 每页显示条数
+        page: 1,// 当前的页数
       }
     },
     created() {
       //获取列表详情
-      this.getHrefDown();
+      //this.getHrefDown();
+      this.getPageHrefInfo();
     },
     methods: {
-      async getHrefDown() {
+      /*async getHrefDown() {
         this.hrefDownInfos = await getHrefDowns();
+      },*/
+      pagechange(page,pageSize) {
+        this.page = page;
+        this.pageSize = pageSize;
+        this.getPageHrefInfo();
       },
-      pagechange(currentPage) {
-        // ajax请求, 向后台发送 currentPage, 来获取对应的数据
+      async getPageHrefInfo(){
+        let PageHrefInfo = await getPageHrefInfos(this.page,this.pageSize);
+        this.totalPage = PageHrefInfo.totalPage;
+        this.hrefDownInfos = PageHrefInfo.hrefInfos;
       },
       deleteBatch() {//待定：需要改成批量传id
         this.hrefDownInfosCheck = this.hrefDownInfos.filter(item => item.isSelected);
